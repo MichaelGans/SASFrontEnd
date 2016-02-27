@@ -1,4 +1,4 @@
 export default DS.Model.extend({
     name: DS.attr(), 
-    itrlist: DS.belongsTo('itrlist', {async: true})
+    itrprogram: DS.belongsTo('itrprogram', {async: true})
 });

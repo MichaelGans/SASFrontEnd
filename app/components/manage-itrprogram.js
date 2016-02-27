@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isManagingItrlist: false,
+  isManagingItrprogram: false,
   store: Ember.inject.service(),
   selectedStudent: null,
   selectedAcademicprogramcode:null,
@@ -25,7 +25,7 @@ export default Ember.Component.extend({
     }),
 
   actions: {
-    saveItrlist (){
+    saveItrprogram (){
       var myStore = this.get('store');
       var selectedStudent = myStore.peekRecord('student', this.get ('selectedStudent'));
       var selectedAcademicprogramcode = myStore.peekRecord('academicprogramcode', this.get ('selectedAcademicprogramcode'));
@@ -39,32 +39,32 @@ export default Ember.Component.extend({
       var orderPull2 = document.getElementById('order2').value;
 
 
-      var newItrlist = myStore.createRecord('itrlist', {
+      var newItrprogram = myStore.createRecord('itrprogram', {
         order: orderPull,
         eligibility: this.get('eligibility'),
         student: selectedStudent,
         academicprogramcode: selectedAcademicprogramcode
       });
-      newItrlist.save();
-      var newItrlist1 = myStore.createRecord('itrlist', {
+      newItrprogram.save();
+      var newItrprogram1 = myStore.createRecord('itrprogram', {
         order: orderPull1,
         eligibility: this.get('eligibility1'),
         student: selectedStudent,
         academicprogramcode: selectedAcademicprogramcode1
       });
-      newItrlist1.save();
-      var newItrlist2 = myStore.createRecord('itrlist', {
+      newItrprogram1.save();
+      var newItrprogram2 = myStore.createRecord('itrprogram', {
         order: orderPull2,
         eligibility: this.get('eligibility2'),
         student: selectedStudent,
         academicprogramcode: selectedAcademicprogramcode2
       });
-      newItrlist2.save().then(() => {
-        this.set('isManagingItrlist', false);
+      newItrprogram2.save().then(() => {
+        this.set('isManagingItrprogram', false);
       });
     },
     cancel() {
-      this.set('isManagingItrlist', false);
+      this.set('isManagingItrprogram', false);
     },
 
     selectedStudent (student){
@@ -72,11 +72,11 @@ export default Ember.Component.extend({
         Ember.Logger.log(this.get('selectedStudent'));
       },
 
-    addNewItrlist() {
-      this.set('isManagingItrlist', true);
+    addNewItrprogram() {
+      this.set('isManagingItrprogram', true);
     },
-    doneItrlist(){
-      this.set('isManagingItrlist', false);
+    doneItrprogram(){
+      this.set('isManagingItrprogram', false);
     }
 
   }
