@@ -11,10 +11,9 @@
             <form>
               <div class="row">
                 <div class="large-12 columns">
-                <div class="large-12 columns">
-                    <div class="row collapse prefix-radius">
-                      <div class="small-3 columns">
-                        <span class="prefix">Student</span>
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Student</span>
                     </div>
                     <div class="small-9 columns">
                       <select onchange={{action (mut selectedStudent) value="target.value"}}>
@@ -24,52 +23,146 @@
                       </select>
                     </div>
                   </div>
-                  <div>
-                    <br>
-                  </div>
+                </div>
+
+
+
+
+                
+                <div>
                   <div class="large-12 columns">
-                    <div class="row collapse prefix-radius">
-                      <div class="small-3 columns">
-                        <span class="prefix">Program Name</span>
-                      </div>
-                      <div class="small-9 columns">
-                      <select id="name">
+                    <hr>
+                  </div>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Program Name</span>
+                    </div>
+                    <div class="small-9 columns">
+                      <select id="name" style="padding: inherit">
+                          <option selected="true" disabled>Please Select An Option</option>
                           <option value=Mechanical>Mechanical</option>
                           <option value=Chemical>Chemical</option>
                           <option value=Software>Software</option>
                       </select>
-                      </div>
                     </div>
                   </div>
-                  <div>
-                    <br>
-                    <br>
-                  </div>
-                  <div class="large-12 columns">
-                    <div class="row collapse prefix-radius">
-                      <div class="small-2 columns">
-                        <span class="prefix">Rank</span>
-                      </div>
-                      <div class="small-3 columns">
-                        <select id="order">
-                          <option value=1>1</option>
-                          <option value=2>2</option>
-                          <option value=3>3</option>
-                        </select>
-                      </div>
-                      <div class="small-2 columns">
-                        <p></p>
-                      </div>
-                      <div class="small-2 columns">
-                        <span class="prefix">Eligibility</span>
-                      </div>
-                      <div class="small-3 columns">
-                         {{input value=eligibility type="text" placeholder="enter eligibility" }}
-                      </div>
+                  <br>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-2 columns">
+                      <span class="prefix">Rank</span>
+                    </div>
+                    <div class="small-3 columns">
+                      <select id="order">
+                        <option value=1>1</option>
+                      </select>
+                    </div>
+                    <div class="small-2 columns">
+                      <p></p>
+                    </div>
+                    <div class="small-2 columns">
+                      <span class="prefix">Eligibility</span>
+                    </div>
+                    <div class="small-3 columns">
+                       {{input value=eligibility type="text" placeholder="enter eligibility" }}
                     </div>
                   </div>
                 </div>
-              </div>
+
+
+                <div>
+                  <div class="large-12 columns">
+                    <hr>
+                    <br>
+                  </div>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Program Name</span>
+                    </div>
+                    <div class="small-9 columns">
+                    <select id="name1" style="padding: inherit">
+                        <option selected="true" disabled>Please Select An Option</option>
+                        <option value=Mechanical>Mechanical</option>
+                        <option value=Chemical>Chemical</option>
+                        <option value=Software>Software</option>
+                    </select>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-2 columns">
+                      <span class="prefix">Rank</span>
+                    </div>
+                    <div class="small-3 columns">
+                      <select id="order1">
+                        <option value=2>2</option>
+                      </select>
+                    </div>
+                    <div class="small-2 columns">
+                      <p></p>
+                    </div>
+                    <div class="small-2 columns">
+                      <span class="prefix">Eligibility</span>
+                    </div>
+                    <div class="small-3 columns">
+                       {{input value=eligibility1 type="text" placeholder="enter eligibility" }}
+                    </div>
+                  </div>
+                </div>
+
+
+                <div>
+                  <div class="large-12 columns">
+                    <hr>
+                    <br>
+                  </div>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Program Name</span>
+                    </div>
+                    <div class="small-9 columns">
+                    <select id="name2" style="padding: inherit">
+                        <option selected="true" disabled>Please Select An Option</option>
+                        <option value=Mechanical>Mechanical</option>
+                        <option value=Chemical>Chemical</option>
+                        <option value=Software>Software</option>
+                    </select>
+                    </div>
+                  </div>
+                  <br>
+                </div>
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-2 columns">
+                      <span class="prefix">Rank</span>
+                    </div>
+                    <div class="small-3 columns">
+                      <select id="order2">
+                        <option value=3>3</option>
+                      </select>
+                    </div>
+                    <div class="small-2 columns">
+                      <p></p>
+                    </div>
+                    <div class="small-2 columns">
+                      <span class="prefix">Eligibility</span>
+                    </div>
+                    <div class="small-3 columns">
+                       {{input value=eligibility2 type="text" placeholder="enter eligibility" }}
+                    </div>
+                  </div>
+                </div>
+
+
             </div>
           </form>
         </fieldset>
