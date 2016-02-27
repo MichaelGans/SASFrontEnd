@@ -28,7 +28,7 @@
 
 
 
-                
+
                 <div>
                   <div class="large-12 columns">
                     <hr>
@@ -40,11 +40,10 @@
                       <span class="prefix">Program Name</span>
                     </div>
                     <div class="small-9 columns">
-                      <select id="name" style="padding: inherit">
-                          <option selected="true" disabled>Please Select An Option</option>
-                          <option value=Mechanical>Mechanical</option>
-                          <option value=Chemical>Chemical</option>
-                          <option value=Software>Software</option>
+                      <select onchange={{action (mut selectedAcademicprogramcode) value="target.value"}}>
+                        {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
+                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
+                        {{/each}}
                       </select>
                     </div>
                   </div>
@@ -85,12 +84,11 @@
                       <span class="prefix">Program Name</span>
                     </div>
                     <div class="small-9 columns">
-                    <select id="name1" style="padding: inherit">
-                        <option selected="true" disabled>Please Select An Option</option>
-                        <option value=Mechanical>Mechanical</option>
-                        <option value=Chemical>Chemical</option>
-                        <option value=Software>Software</option>
-                    </select>
+                      <select onchange={{action (mut selectedAcademicprogramcode1) value="target.value"}}>
+                        {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
+                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
+                        {{/each}}
+                      </select>
                     </div>
                   </div>
                   <br>
@@ -130,12 +128,11 @@
                       <span class="prefix">Program Name</span>
                     </div>
                     <div class="small-9 columns">
-                    <select id="name2" style="padding: inherit">
-                        <option selected="true" disabled>Please Select An Option</option>
-                        <option value=Mechanical>Mechanical</option>
-                        <option value=Chemical>Chemical</option>
-                        <option value=Software>Software</option>
-                    </select>
+                      <select onchange={{action (mut selectedAcademicprogramcode2) value="target.value"}}>
+                        {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
+                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
+                        {{/each}}
+                      </select>
                     </div>
                   </div>
                   <br>
