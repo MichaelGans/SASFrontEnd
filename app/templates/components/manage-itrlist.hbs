@@ -86,7 +86,7 @@
                     <div class="small-9 columns">
                       <select onchange={{action (mut selectedAcademicprogramcode1) value="target.value"}}>
                         {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
-                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
+                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode1 academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
                         {{/each}}
                       </select>
                     </div>
@@ -130,7 +130,7 @@
                     <div class="small-9 columns">
                       <select onchange={{action (mut selectedAcademicprogramcode2) value="target.value"}}>
                         {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
-                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
+                            <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode2 academicprogramcodeChoice}}>{{academicprogramcodeChoice.name}}</option>
                         {{/each}}
                       </select>
                     </div>

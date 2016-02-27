@@ -29,8 +29,11 @@ export default Ember.Component.extend({
       var myStore = this.get('store');
       var selectedStudent = myStore.peekRecord('student', this.get ('selectedStudent'));
       var selectedAcademicprogramcode = myStore.peekRecord('academicprogramcode', this.get ('selectedAcademicprogramcode'));
+      console.log(selectedAcademicprogramcode);
       var selectedAcademicprogramcode1 = myStore.peekRecord('academicprogramcode', this.get ('selectedAcademicprogramcode1'));
+      console.log(selectedAcademicprogramcode1);
       var selectedAcademicprogramcode2 = myStore.peekRecord('academicprogramcode', this.get ('selectedAcademicprogramcode2'));
+      console.log(selectedAcademicprogramcode2);
       var orderPull = document.getElementById('order').value;
       var orderPull1 = document.getElementById('order1').value;
       var orderPull2 = document.getElementById('order2').value;
@@ -54,7 +57,7 @@ export default Ember.Component.extend({
         order: orderPull2,
         eligibility: this.get('eligibility2'),
         student: selectedStudent,
-        selectedAcademicprogramcode: selectedAcademicprogramcode2
+        academicprogramcode: selectedAcademicprogramcode2
       });
       newItrlist2.save().then(() => {
         this.set('isManagingItrlist', false);

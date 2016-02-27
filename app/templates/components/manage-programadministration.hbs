@@ -1,0 +1,62 @@
+{{#if  isManagingProgramadministration }}
+  <div class="row">
+    <div class="large-12 columns">
+      <br>
+      <h3 align="center">Add New Programadministration</h3>
+      <hr/>
+      <br>
+      <fieldset>
+        <legend>Please use the form below</legend>
+        <br>
+        <form>
+          <div class="row">
+            <div class="large-12 columns">
+              <div class="row collapse prefix-radius">
+                <div class="small-3 columns">
+                  <span class="prefix">Program</span>
+                </div>
+                <div class="small-9 columns">
+                  <select onchange={{action (mut selectedAcademicprogramcode) value="target.value"}}>
+                    {{#each academicprogramcodeModel as |academicprogramcodeChoice|}}
+                        <option value={{academicprogramcodeChoice.id}} selected={{eq selectedAcademicprogramcode academicprogramChoice}}>{{academicprogramcodeChoice.name}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="large-12 columns">
+              <div class="row collapse prefix-radius">
+                <div class="small-3 columns">
+                  <span class="prefix">Name</span>
+                </div>
+                <div class="small-9 columns">
+                  {{input value=name  type="text" }}
+                </div>
+              </div>
+            </div>
+            <div class="large-12 columns">
+              <div class="row collapse prefix-radius">
+                <div class="small-3 columns">
+                  <span class="prefix">Position</span>
+                </div>
+                <div class="small-9 columns">
+                  {{input value=position  type="text" }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </fieldset>
+      <br>
+      <a href="#" class="button radius" {{action 'saveProgramadministration'}}>Save</a>
+      <a href="#" class="button radius" {{action 'cancel'}}>Cancel</a>
+    </div>
+  </div>
+{{else}}
+    <div class="row">
+        <div class="large-12 columns">
+            <br>
+            <a href="#" class="button round" {{action 'addNewProgramadministration'}}>Add Programadministrations</a>
+        </div>
+    </div>
+{{/if}}
