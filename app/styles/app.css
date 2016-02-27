@@ -1,0 +1,23 @@
+.studentsbox{
+	background-color:#E9E6F3; 
+	padding:50px 0px 10px 0px;
+	border-top: 5px solid #502D82;
+}
+
+.spacemeup{
+	margin-top:10px
+}
+
+@media only screen and (min-width: 64.0625em){
+	.spacemeup .large-2 {
+	     width: 100%; 
+	}
+}
+
+fieldset {
+	background-color: rgba(233, 230, 243, 0.48);
+}
+
+form .row .prefix-radius.row.collapse .prefix {
+	background-color: #D4D4E6;
+}

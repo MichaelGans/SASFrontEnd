@@ -1,0 +1,30 @@
+<div align="center">
+<br><br>
+<img src="assets/images/Western.gif">
+<h3>Students Admission System</h3>
+<br>
+<div class="studentsbox">
+<ul class="circle">
+    <ul>
+      {{#each model as |oneStudent|}}
+          <div class="row">
+            {{edit-student ID=oneStudent.id Model=model}}
+            <div class="large-3 columns">
+                {{oneStudent.number}} {{oneStudent.firstName}} {{oneStudent.lastName}}
+          </div>
+            <div class="large-2 columns">
+                {{delete-student ID=oneStudent.id}}
+            </div>
+          </div>
+      {{/each}}
+    </ul>
+</ul>
+</div>
+<br>
+</div>
+
+<div align="center">
+{{add-new-student}}
+{{manage-itrlist}}
+</div>
+
