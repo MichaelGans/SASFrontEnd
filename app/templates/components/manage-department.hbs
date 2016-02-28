@@ -1,0 +1,64 @@
+{{#if isManagingDepartment}}
+    <div class="row">
+        <div class="large-12 columns">
+            <h4 align="center"> Manage Department</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10  large-centered columns">
+            <div class="panel">
+              {{#if isAddingNewDepartment}}
+                  <h2>Add new department</h2>
+                  <form>
+                      <div class="row">
+                        <div class="large-12 columns">
+                          <div class="row collapse prefix-radius">
+                            <div class="small-3 columns">
+                              <span class="prefix">Department</span>
+                            </div>
+                            <div class="small-9 columns">
+                              <select onchange={{action (mut selectedFaculty) value="target.value"}}>
+                                {{#each facultyModel as |facultyChoice|}}
+                                    <option value={{facultyChoice.id}} selected={{eq selectedFaculty facultyChoice}}>{{facultyChoice.name}}</option>
+                                {{/each}}
+                              </select>
+                            </div>
+                          </div>
+                        </div>  
+                        <div class="large-12 columns">
+                          <label>Name
+                            {{input value=name  type="text" }}
+                          </label>
+                        </div>
+                      </div>
+                  </form>
+                  <div class="row">
+                      <div class="large-12 columns">
+                          <a href="#" class="button radius" {{action 'saveNewDepartment'}}>Save</a>
+                          <a href="#" class="button radius" {{action 'cancelAddNewDepartment'}}>Cancel</a>
+                      </div>
+                  </div>
+                  <br>
+              {{else}}
+                {{#each departmentModel as |oneDepartment|}}
+                    <div class="row">
+                        <li class="large-3 columns">  {{oneDepartment.name}} </li>
+                    </div>
+                {{/each}}
+                  <div class="row">
+                      <div class="large-12 columns">
+                          <br> <br> <br>
+                          <a href="#" class="button radius" {{action 'addNewDepartment'}}>Add new department</a>
+                          <a href="#" class="button radius" {{action 'doneDepartment'}}>Done</a>
+                      </div>
+                  </div>
+              {{/if}}
+            </div>
+        </div>
+    </div>
+
+{{else}}
+    <div class="large-2 columns">
+        <a href="#" class="button round" {{action 'manageDepartment' }}>Add Department</a>
+    </div>
+{{/if}}

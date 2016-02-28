@@ -13,15 +13,25 @@ export default Ember.Component.extend({
       return this.get('store').findAll('academicprogramcode');
     }),
 
+  departmentModel: Ember.computed(function(){
+      var self = this;
+        this.get('store').findAll('department').then(function(records){
+        self.set ('selectedDepartment', records.get('firstObject').get('id'));
+      });
+      return this.get('store').findAll('department');
+    }),
+
   actions: {
     saveProgramadministration (){
       var myStore = this.get('store');
       var selectedAcademicprogramcode = myStore.peekRecord('academicprogramcode', this.get ('selectedAcademicprogramcode'));
+      var selectedDepartment = myStore.peekRecord('department', this.get ('selectedDepartment'));
 
       var newProgramadministration = myStore.createRecord('programadministration', {
         name: this.get('name'),
         position: this.get('position'),
-        academicprogramcode: selectedAcademicprogramcode
+        academicprogramcode: selectedAcademicprogramcode,
+        department: selectedDepartment
       });
       newProgramadministration.save().then(() => {
         this.set('isManagingProgramadministration', false);

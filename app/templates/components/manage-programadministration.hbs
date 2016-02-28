@@ -24,6 +24,22 @@
                 </div>
               </div>
             </div>
+
+            <div class="large-12 columns">
+              <div class="row collapse prefix-radius">
+                <div class="small-3 columns">
+                  <span class="prefix">Department</span>
+                </div>
+                <div class="small-9 columns">
+                  <select onchange={{action (mut selectedDepartment) value="target.value"}}>
+                    {{#each departmentModel as |departmentChoice|}}
+                        <option value={{departmentChoice.id}} selected={{eq selectedDepartment departmentChoice}}>{{departmentChoice.name}}</option>
+                    {{/each}}
+                  </select>
+                </div>
+              </div>
+            </div>  
+
             <div class="large-12 columns">
               <div class="row collapse prefix-radius">
                 <div class="small-3 columns">
