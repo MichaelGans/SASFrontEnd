@@ -30,10 +30,7 @@
                 {{#each countryModel as |oneCountry|}}
                     <div class="row">
                         <li class="large-3 columns">  {{oneCountry.name}} </li>
-
-                        <div class="large-2 columns">
                           {{delete-country ID=oneCountry.id }}
-                        </div>
                     </div>
                 {{/each}}
                   <div class="row">

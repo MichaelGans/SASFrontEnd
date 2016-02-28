@@ -1,0 +1,106 @@
+{{#if  isProgramrecordFormEditing }}
+    <div class="row">
+        <div class="large-12 columns">
+            <br>
+            <h3 align="center">Add New Program Record</h3>
+            <hr/>
+            <br>
+            <fieldset>
+            <legend>Please use the form below</legend>
+            <br>
+            <form>
+                <div class="row">
+                    <div class="large-12 columns">
+
+            <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Level</span>
+                    </div>
+                    <div class="small-9 columns">
+                      {{input value=level type="text" placeholder="enter level" }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Status</span>
+                    </div>
+                    <div class="small-9 columns">
+                       {{input value=status type="text" placeholder="enter status" }}
+                    </div>
+                  </div>
+                </div>
+
+                <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Comment</span>
+                    </div>
+                    <div class="small-9 columns">
+                       {{input value=comment type="text" placeholder="enter comment" }}
+                    </div>
+                  </div>
+                </div>
+
+                 <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Degree Code</span>
+                    </div>
+                    <div class="small-9 columns">
+                                <select onchange={{action (mut selectedDegreecode) value="target.value"}}>
+                                  {{!--   <select onchange={{action 'selectDegreecode' value="target.value"}} > --}}
+                                  {{#each degreecodeModel as |degreecodeChoice|}}
+                                      <option value={{degreecodeChoice.id}} selected={{eq selectedDegreecode degreecodeChoice}}>{{degreecodeChoice.name}}</option>
+                                  {{/each}}
+                                </select>
+                    </div>
+                     
+                  </div>
+                </div>
+
+                <div class="large-12 columns spacemeup">
+                     {{manage-degreecode}}
+                </div>
+
+                                 <div class="large-12 columns">
+                  <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                      <span class="prefix">Term Code</span>
+                    </div>
+                    <div class="small-9 columns">
+                                <select onchange={{action (mut selectedTermcode) value="target.value"}}>
+                                  {{!--   <select onchange={{action 'selectTermcode' value="target.value"}} > --}}
+                                  {{#each termcodeModel as |termcodeChoice|}}
+                                      <option value={{termcodeChoice.id}} selected={{eq selectedTermcode termcodeChoice}}>{{termcodeChoice.name}}</option>
+                                  {{/each}}
+                                </select>
+                    </div>
+                     
+                  </div>
+                </div>
+
+                <div class="large-12 columns spacemeup">
+                     {{manage-termcode}}
+                </div>
+
+                    </div>
+                </div>
+            </form>
+            </fieldset>
+            <br>
+            <a href="#" class="button radius" {{action 'saveProgramrecord'}}>Save</a>
+            <a href="#" class="button radius" {{action 'cancel'}}>Cancel</a>
+        </div>
+    </div>
+{{else}}
+    <div class="row">
+        <div class="large-12 columns">
+            <a href="#" class="button round main" {{action 'addNewProgramrecord'}}>Add New Program Record</a>
+        </div>
+    </div>
+{{/if}}
+

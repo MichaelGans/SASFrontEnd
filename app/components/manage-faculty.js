@@ -10,29 +10,22 @@ export default Ember.Component.extend({
   }),
 
   actions: {
-    saveNewFaculty (){
+    saveFaculty(){
       var myStore = this.get('store');
       var newFaculty = myStore.createRecord('faculty', {
         name: this.get('name')
       });
       newFaculty.save().then(() => {
-        this.set('isAddingNewFaculty', false);
+        this.set('isManagingFaculty', false);
       });
     },
 
-    cancelAddNewFaculty() {
-      this.set('isAddingNewFaculty', false);
-    },
-
-    manageFaculty() {
-      this.set('isManagingFaculty', true);
+    cancel(){
+      this.set('isManagingFaculty', false);
     },
 
     addNewFaculty() {
-      this.set('isAddingNewFaculty', true);
-    },
-    doneFaculty(){
-      this.set('isManagingFaculty', false);
+      this.set('isManagingFaculty', true);
     }
 
   }

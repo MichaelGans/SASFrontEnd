@@ -81,98 +81,102 @@ export default Ember.Component.extend({
 
   actions: {
     saveStudent () {
+
+      var myStore = this.get('store');
       //var updatedStudent = this.get('studentModel')
-      var updatedStudent = this.get('store').peekRecord('student', this.get('ID'));
+      var updatedStudent = myStore.peekRecord('student', this.get('ID'));
 
-      var res = this.get('store').peekRecord('residency', this.get('selectedResidency'));
-      var oneGender = this.get('store').peekRecord('gender', this.get('selectedGender'));
-      var oneCountry = this.get('store').peekRecord('country', this.get('selectedCountry'));
-      var oneProvince = this.get('store').peekRecord('province', this.get('selectedProvince'));
-      var oneCity = this.get('store').peekRecord('city', this.get('selectedCity'));
-      var oneAcademicLoad = this.get('store').peekRecord('academicload', this.get('selectedAcademicload'));
+      // var res = this.get('store').peekRecord('residency', this.get('selectedResidency'));
+      // var oneGender = this.get('store').peekRecord('gender', this.get('selectedGender'));
+      // var oneCountry = this.get('store').peekRecord('country', this.get('selectedCountry'));
+      // var oneProvince = this.get('store').peekRecord('province', this.get('selectedProvince'));
+      // var oneCity = this.get('store').peekRecord('city', this.get('selectedCity'));
+      // var oneAcademicLoad = this.get('store').peekRecord('academicload', this.get('selectedAcademicload'));
 
-      updatedStudent.set('resInfo',res);
-      updatedStudent.set('gender',oneGender);
-      updatedStudent.set('country',oneCountry);
-      updatedStudent.set('province',oneProvince);
-      updatedStudent.set('city',oneCity);
-      updatedStudent.set('academicload',oneAcademicLoad);
+        var chosenResidency = myStore.peekRecord('residency', this.get ('selectedResidency'));
+        var chosenGender = myStore.peekRecord('gender', this.get ('selectedGender'));
+        var chosenCountry = myStore.peekRecord('country', this.get ('selectedCountry'));
+        var chosenProvince = myStore.peekRecord('province', this.get ('selectedProvince'));
+        var chosenCity = myStore.peekRecord('city', this.get ('selectedCity'));
+        var chosenAcademicload = myStore.peekRecord('academicload', this.get ('selectedAcademicload'));
+
+      updatedStudent.set('resInfo',chosenResidency);
+      updatedStudent.set('gender',chosenGender);
+      updatedStudent.set('country',chosenCountry);
+      updatedStudent.set('province',chosenProvince);
+      updatedStudent.set('city',chosenCity);
+      updatedStudent.set('academicload',chosenAcademicload);
       updatedStudent.save().then(() => {
         this.set('isStudentFormEditing', false);
       });
     },
 
-    selectResidency (residency){
-      this.set('selectedResidency', residency);
-    },
+    // selectedResidency (residency){
+    //   this.set('selectedResidency', residency);
+    // },
 
-    selectGender (gender){
-      this.set('selectedGender', gender);
-    },
+    // selectedGender (gender){
+    //   this.set('selectedGender', gender);
+    // },
 
-    selectedCountry (country){
-      this.set('selectedCountry', country);
-    },
+    // selectedCountry (country){
+    //   this.set('selectedCountry', country);
+    // },
 
-    selectProvince (province){
-      this.set('selectedProvince', province);
-    },
+    // selectProvince (province){
+    //   this.set('selectedProvince', province);
+    // },
 
-    selectCity (city){
-      this.set('selectedCity', city);
-    },
+    // selectCity (city){
+    //   this.set('selectedCity', city);
+    // },
 
-    selectedAcademicload (academicload){
-      this.set('selectedAcademicload', academicload);
-    },
+    // selectedAcademicload (academicload){
+    //   this.set('selectedAcademicload', academicload);
+    // },
 
     editStudent () {
-      this.get('Model').forEach(function(record){
-         record.reload();
-      });
-      this.set ('studentRecord', this.get('store').peekRecord('student', this.get('ID')));
-      var self = this;
-      this.get('studentRecord').get('resInfo').then(function(res){
-        if (res) {
-          self.set ('residencyID' , res.get('id'));
-        }
-      });
+      // this.get('Model').forEach(function(record){
+      //    record.reload();
+      // });
+      //this.set ('studentRecord', this.get('store').peekRecord('student', this.get('ID')));
+      //var self = this;
 
-      this.get('studentRecord').get('resInfo').then(function(res){
-        if (res) {
-          self.set ('residencyID' , res.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('resInfo').then(function(res){
+      //   if (res) {
+      //     self.set ('residencyID' , res.get('id'));
+      //   }
+      // });
 
-      this.get('studentRecord').get('gender').then(function(res){
-        if (oneGender) {
-          self.set ('genderID' , oneGender.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('gender').then(function(res){
+      //   if (oneGender) {
+      //     self.set ('genderID' , oneGender.get('id'));
+      //   }
+      // });
 
-      this.get('studentRecord').get('country').then(function(res){
-        if (oneCountry) {
-          self.set ('countryID' , oneCountry.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('country').then(function(res){
+      //   if (oneCountry) {
+      //     self.set ('countryID' , oneCountry.get('id'));
+      //   }
+      // });
 
-      this.get('studentRecord').get('province').then(function(res){
-        if (oneProvince) {
-          self.set ('provinceID' , oneProvince.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('province').then(function(res){
+      //   if (oneProvince) {
+      //     self.set ('provinceID' , oneProvince.get('id'));
+      //   }
+      // });
 
-      this.get('studentRecord').get('city').then(function(res){
-        if (oneCity) {
-          self.set ('cityID' , oneCity.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('city').then(function(res){
+      //   if (oneCity) {
+      //     self.set ('cityID' , oneCity.get('id'));
+      //   }
+      // });
 
-      this.get('studentRecord').get('academicload').then(function(res){
-        if (oneAcademicLoad) {
-          self.set ('academicloadID' , oneAcademicLoad.get('id'));
-        }
-      });
+      // this.get('studentRecord').get('academicload').then(function(res){
+      //   if (oneAcademicLoad) {
+      //     self.set ('academicloadID' , oneAcademicLoad.get('id'));
+      //   }
+      // });
 
       this.set('isStudentFormEditing', true);
     },

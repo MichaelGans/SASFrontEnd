@@ -1,15 +1,15 @@
-{{#if isManagingResidency}}
+{{#if isManagingDegreecode}}
     <div class="row">
         <div class="large-12 columns">
-            <h4 align="center"> Manage Residency</h4>
+            <h4 align="center"> Manage Degree Code</h4>
         </div>
     </div>
 
     <div class="row">
         <div class="large-10  large-centered columns">
             <div class="panel">
-              {{#if isAddingNewResidency}}
-                  <h2>Add new residency</h2>
+              {{#if isAddingNewDegreecode}}
+                  <h2>Add new degree code</h2>
                   <form>
                       <div class="row">
                           <div class="large-12 columns">
@@ -21,23 +21,23 @@
                   </form>
                   <div class="row">
                       <div class="large-12 columns">
-                          <a href="#" class="button radius" {{action 'saveNewResidency'}}>Save</a>
-                          <a href="#" class="button radius" {{action 'cancelAddNewResidency'}}>Cancel</a>
+                          <a href="#" class="button radius" {{action 'saveNewDegreecode'}}>Save</a>
+                          <a href="#" class="button radius" {{action 'cancelAddNewDegreecode'}}>Cancel</a>
                       </div>
                   </div>
                   <br>
               {{else}}
-                {{#each residencyModel as |oneResidency|}}
+                {{#each degreecodeModel as |oneDegreecode|}}
                     <div class="row">
-                        <li class="large-3 columns">  {{oneResidency.name}} </li>
-                          {{delete-residency ID=oneResidency.id }}
+                        <li class="large-3 columns">  {{oneDegreecode.name}} </li>
+                        {{delete-degreecode ID=oneDegreecode.id}}
                     </div>
                 {{/each}}
                   <div class="row">
                       <div class="large-12 columns">
                           <br> <br> <br>
-                          <a href="#" class="button radius" {{action 'addNewResidency'}}>Add new residency</a>
-                          <a href="#" class="button radius" {{action 'doneResidency'}}>Done</a>
+                          <a href="#" class="button radius" {{action 'addNewDegreecode'}}>Add new degree code</a>
+                          <a href="#" class="button radius" {{action 'doneDegreecode'}}>Done</a>
                       </div>
                   </div>
               {{/if}}
@@ -47,7 +47,7 @@
 
 {{else}}
     <div class="large-2 columns">
-        <a href="#" class="button round tiny" {{action 'manageResidency' }}>More</a>
+        <a href="#" class="button round tiny" {{action 'manageDegreecode' }}>More</a>
     </div>
 {{/if}}
 

@@ -2,7 +2,7 @@
   <div class="row">
     <div class="large-12 columns">
       <br>
-      <h3 align="center">Add New Program</h3>
+      <h3 align="center">Add New Academic Program Code</h3>
       <hr/>
       <br>
       <fieldset>
@@ -16,7 +16,7 @@
                   <span class="prefix">Program Name</span>
                 </div>
                 <div class="small-9 columns">
-                   {{input value=name type="text" placeholder="program name" }}
+                   {{input value=name type="text" placeholder="enter program name" }}
                 </div>
               </div>
               <br>
@@ -32,8 +32,7 @@
 {{else}}
   <div class="row">
       <div class="large-12 columns">
-          <br>
-          <a href="#" class="button round" {{action 'addProgram'}}>Add Programs</a>
+          <a href="#" class="button round main" {{action 'addProgram'}}>Add New Academic Program Code</a>
       </div>
   </div>
 {{/if}}

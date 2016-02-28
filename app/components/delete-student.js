@@ -13,6 +13,9 @@ export default Ember.Component.extend({
           student.set('gender', null);
           student.set('country', null);
           student.set('province', null);
+          student.set('city', null);
+          student.set('academicload', null);
+          student.set('grade', null);
           student.save().then(function(){
             student.destroyRecord();
           });

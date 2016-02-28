@@ -14,7 +14,7 @@ export default Ember.Component.extend({
     }),
 
   actions: {
-    saveNewDepartment (){
+    saveDepartment (){
       var myStore = this.get('store');
       var selectedFaculty = myStore.peekRecord('faculty', this.get ('selectedFaculty'));
 
@@ -26,19 +26,13 @@ export default Ember.Component.extend({
         this.set('isManagingDepartment', false);
       });
     },
-    cancel() {
-      this.set('isManagingDepartment', false);
-    },
 
-    manageDepartment(){
-      this.set('isManagingDepartment',true);
+    cancel(){
+      this.set('isManagingDepartment', false);
     },
 
     addNewDepartment() {
-      this.set('isAddingNewDepartment', true);
-    },
-    doneDepartment(){
-      this.set('isManagingDepartment', false);
+      this.set('isManagingDepartment', true);
     }
 
   }

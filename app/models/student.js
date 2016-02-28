@@ -11,5 +11,7 @@ export default DS.Model.extend({
   province: DS.belongsTo('province',{ async: true }),
   city: DS.belongsTo('city',{ async: true }),
   academicload: DS.belongsTo('academicload',{ async: true }),
+  grades: DS.hasMany('grade', { async: true }),
+  distributionresults: DS.hasMany('distributionresult', { async: true }),
   itrprograms: DS.hasMany('itrprogram', {async: true})
 });
